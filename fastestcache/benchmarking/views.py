@@ -15,14 +15,15 @@ def run(request, cache_name):
     t0 = time.time()
     data = cache.get('benchmarking', [])
     t1 = time.time()
-    if random.random() > 0.7:
+    if random.random() < settings.WRITE_CHANCE:
         data.append(t1 - t0)
         cache.set('benchmarking', data, 60)
     if data:
         avg = 1000 * sum(data) / len(data)
     else:
         avg = 'notyet'
-    print('#data:', len(data), ' avg:', avg, ' size:', len(str(data)))
+    # print(cache_name, '#', len(data), 'avg:', avg, ' size:', len(str(data)))
+    print(data)
     return http.HttpResponse('{}\n'.format(avg))
 
 
