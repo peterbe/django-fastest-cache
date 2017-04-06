@@ -128,4 +128,4 @@ CACHES = {
     },
 }
 
-CACHE_NAMES = list(CACHES.keys())
+CACHE_NAMES = config('CACHE_NAMES', default=list(CACHES.keys()), cast=Csv())
