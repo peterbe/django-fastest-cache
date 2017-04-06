@@ -28,7 +28,11 @@ SECRET_KEY = config(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', True)
-
+DEBUG_PROPAGATE_EXCEPTIONS = config(
+    'DEBUG_PROPAGATE_EXCEPTIONS',
+    False,
+    cast=bool,
+)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', '', cast=Csv())
 
 
