@@ -23,7 +23,6 @@ def run(request, cache_name):
     else:
         avg = 'notyet'
     # print(cache_name, '#', len(data), 'avg:', avg, ' size:', len(str(data)))
-    print(data)
     return http.HttpResponse('{}\n'.format(avg))
 
 
