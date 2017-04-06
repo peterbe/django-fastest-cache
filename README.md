@@ -13,7 +13,7 @@ Start the server:
 
 First run it a bunch of times:
 
-    ab -n 10000 "http://127.0.0.1:8000/random"
+    wrk -d10s "http://127.0.0.1:8000/random"
 
 Then to see which was the fastest:
 
@@ -21,8 +21,13 @@ Then to see which was the fastest:
 
 You'll get an output like this:
 
-                             TIMES        AVERAGE         MEDIAN         STDDEV
-    default                     73        0.034ms        0.033ms        0.005ms
-    memcached                   59        0.297ms        0.261ms        0.144ms
-    pylibmc                     89        0.222ms        0.211ms        0.039ms
-    redis                       75        0.244ms        0.234ms        0.052ms
+              TIMES        AVERAGE         MEDIAN         STDDEV
+    redis                     1896        0.623ms        0.474ms        0.738ms
+    default                   1981        0.087ms        0.074ms        0.105ms
+    memcached                 1629        2.328ms        1.915ms        1.877ms
+
+    Best Averages (shorter better)
+    ###############################################################################
+    ████████████████                                               0.623  redis
+    ██                                                             0.087  default
+    █████████████████████████████████████████████████████████████  2.328  memcached
