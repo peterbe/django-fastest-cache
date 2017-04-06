@@ -134,4 +134,5 @@ CACHES = {
 
 CACHE_NAMES = config('CACHE_NAMES', default=list(CACHES.keys()), cast=Csv())
 
-WRITE_CHANCE = config('WRITE_CHANCE', 1.0)  # 1.0 = Always make a write
+# 1.0 = Always make a write
+WRITE_CHANCE = config('WRITE_CHANCE', 1.0, cast=float)
