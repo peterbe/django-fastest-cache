@@ -27,7 +27,7 @@ SECRET_KEY = config(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', True)
+DEBUG = config('DEBUG', True, cast=bool)
 DEBUG_PROPAGATE_EXCEPTIONS = config(
     'DEBUG_PROPAGATE_EXCEPTIONS',
     False,

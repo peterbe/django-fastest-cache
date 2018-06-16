@@ -1,7 +1,7 @@
-Django==1.11
-django-redis==4.7.0
-python-memcached==1.58
+Django==2.0.6
+django-redis==4.9.0
+python-memcached==1.59
 django-pylibmc==0.6.1
-python-decouple==3.0
-ascii-graph==1.2.0
+python-decouple==3.1
+ascii-graph==1.5.1
 hiredis==0.2.0
